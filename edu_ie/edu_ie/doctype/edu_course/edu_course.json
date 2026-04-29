@@ -5,21 +5,49 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_puqa"
+  "generat_information_column",
+  "course_name_en",
+  "course_number",
+  "abbreviation",
+  "course_number_abbreviation"
  ],
  "fields": [
   {
-   "fieldname": "section_break_puqa",
-   "fieldtype": "Section Break"
+   "fieldname": "generat_information_column",
+   "fieldtype": "Column Break",
+   "label": "Generat Information"
+  },
+  {
+   "fieldname": "course_number",
+   "fieldtype": "Data",
+   "label": "Course Number"
+  },
+  {
+   "fieldname": "abbreviation",
+   "fieldtype": "Data",
+   "label": "Abbreviation"
+  },
+  {
+   "fieldname": "course_name_en",
+   "fieldtype": "Data",
+   "label": "Course Name (EN)"
+  },
+  {
+   "fieldname": "course_number_abbreviation",
+   "fieldtype": "Data",
+   "label": "Course Number Abbreviation",
+   "read_only": 1,
+   "unique": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-29 10:17:04.964720",
+ "modified": "2026-04-29 16:01:19.438351",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Course",
+ "naming_rule": "By script",
  "owner": "Administrator",
  "permissions": [
   {
@@ -37,6 +65,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "course_number_abbreviation",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []

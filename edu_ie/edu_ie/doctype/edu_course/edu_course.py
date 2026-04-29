@@ -6,4 +6,13 @@ from frappe.model.document import Document
 
 
 class EDUCourse(Document):
-	pass
+    def before_insert(self):
+
+        self.course_number_abbreviation = (
+            (self.course_number).strip() + " - " + (self.abbreviation).upper().strip()
+        )
+
+    def autoname(self):
+        self.name = (
+            (self.course_number).strip() + " - " + (self.abbreviation).upper().strip()
+        )

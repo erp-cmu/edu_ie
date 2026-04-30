@@ -61,5 +61,5 @@ typing-modules = ["frappe.types.DF"]
 
 [tool.ruff.format]
 quote-style = "double"
-indent-style = "spaces"
+indent-style = "tab"
 docstring-code-format = true

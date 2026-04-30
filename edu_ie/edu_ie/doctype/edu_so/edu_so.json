@@ -1,51 +1,40 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-04-29 15:33:16.895754",
+ "creation": "2026-04-30 14:12:52.842871",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "general_information",
-  "curriculum_name_en",
-  "abbreviation",
-  "revision_year"
+  "so_number",
+  "description_en",
+  "description_th"
  ],
  "fields": [
   {
-   "fieldname": "general_information",
-   "fieldtype": "Section Break",
-   "label": "General Information"
+   "fieldname": "so_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "SO#"
   },
   {
-   "fieldname": "curriculum_name_en",
+   "fieldname": "description_en",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Curriculum Name (EN)",
-   "reqd": 1
+   "label": "Description (EN)"
   },
   {
-   "description": "IE, IEL",
-   "fieldname": "abbreviation",
+   "fieldname": "description_th",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Abbreviation",
-   "reqd": 1
-  },
-  {
-   "fieldname": "revision_year",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Revision Year",
-   "reqd": 1
+   "label": "Description (TH)"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-30 13:11:57.997120",
+ "modified": "2026-04-30 14:17:58.492910",
  "modified_by": "Administrator",
  "module": "EDU IE",
- "name": "EDU Curriculum",
+ "name": "EDU SO",
  "owner": "Administrator",
  "permissions": [
   {

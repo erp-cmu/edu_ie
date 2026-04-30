@@ -1,0 +1,37 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:section_number",
+ "creation": "2026-04-30 13:38:41.920007",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_number",
+   "fieldtype": "Link",
+   "label": "Section Number",
+   "options": "EDU Section",
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-30 13:43:45.431958",
+ "modified_by": "Administrator",
+ "module": "EDU IE",
+ "name": "EDU Section Link",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

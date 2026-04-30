@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-30 14:11:30.112973",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cso_number",
+  "so",
+  "description_en",
+  "description_th"
+ ],
+ "fields": [
+  {
+   "fieldname": "cso_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "CSO#"
+  },
+  {
+   "fieldname": "so",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "SO#",
+   "options": "EDU SO"
+  },
+  {
+   "fetch_from": "so.description_en",
+   "fieldname": "description_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description (EN)"
+  },
+  {
+   "fetch_from": "so.description_th",
+   "fieldname": "description_th",
+   "fieldtype": "Data",
+   "label": "Description (TH)"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-04-30 14:24:35.999129",
+ "modified_by": "Administrator",
+ "module": "EDU IE",
+ "name": "EDU Course CI CSO SO Map",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

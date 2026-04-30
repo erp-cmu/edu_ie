@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-04-30 13:21:31.726772",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "abet1_tab",
+  "general_information_section",
+  "amended_from",
+  "evaluation_year",
+  "course",
+  "curriculum",
+  "sections",
+  "cso_so_section",
+  "cso_table",
+  "cso_so_mapping",
+  "abet2_tab",
+  "course_assessment_section",
+  "rubric_table",
+  "cso_evaluation_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Course",
+   "options": "EDU Course",
+   "reqd": 1
+  },
+  {
+   "fieldname": "curriculum",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Curriculum",
+   "options": "EDU Curriculum",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "EDU Course CI",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "sections",
+   "fieldtype": "Table MultiSelect",
+   "label": "Section(s)",
+   "options": "EDU Section Link",
+   "reqd": 1
+  },
+  {
+   "fieldname": "abet1_tab",
+   "fieldtype": "Tab Break",
+   "label": "ABET1"
+  },
+  {
+   "fieldname": "abet2_tab",
+   "fieldtype": "Tab Break",
+   "label": "ABET2"
+  },
+  {
+   "fieldname": "general_information_section",
+   "fieldtype": "Section Break",
+   "label": "General Information"
+  },
+  {
+   "fieldname": "evaluation_year",
+   "fieldtype": "Link",
+   "label": "Evaluation Year",
+   "options": "EDU Evaluation Year"
+  },
+  {
+   "fieldname": "cso_so_mapping",
+   "fieldtype": "Table",
+   "label": "CSO-SO Mapping",
+   "options": "EDU Course CI CSO SO Map"
+  },
+  {
+   "fieldname": "cso_so_section",
+   "fieldtype": "Section Break",
+   "label": "CSO and SO"
+  },
+  {
+   "fieldname": "cso_table",
+   "fieldtype": "Table",
+   "label": "CSO Entries",
+   "options": "EDU Course CI CSO"
+  },
+  {
+   "fieldname": "rubric_table",
+   "fieldtype": "Table",
+   "label": "Rubric",
+   "options": "EDU Course CI Rubric"
+  },
+  {
+   "fieldname": "course_assessment_section",
+   "fieldtype": "Section Break",
+   "label": "Course Assessment"
+  },
+  {
+   "fieldname": "cso_evaluation_table",
+   "fieldtype": "Table",
+   "label": "CSO Evaluation",
+   "options": "EDU Course CI Eval"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-30 15:18:08.017490",
+ "modified_by": "Administrator",
+ "module": "EDU IE",
+ "name": "EDU Course CI",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

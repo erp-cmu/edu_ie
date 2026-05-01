@@ -1,0 +1,21 @@
+{
+ "app": "edu_ie",
+ "bg_color": "gray",
+ "creation": "2026-05-01 12:30:18.472397",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "App",
+ "idx": 0,
+ "label": "EDU IE",
+ "link": "/edu_ie",
+ "link_type": "Workspace Sidebar",
+ "logo_url": "/assets/edu_ie/edu_ie_logo.png",
+ "modified": "2026-05-01 14:05:34.096905",
+ "modified_by": "Administrator",
+ "name": "EDU IE",
+ "owner": "Administrator",
+ "restrict_removal": 0,
+ "roles": [],
+ "standard": 1
+}

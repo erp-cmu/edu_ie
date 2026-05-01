@@ -1,0 +1,99 @@
+{
+ "app": "edu_ie",
+ "creation": "2026-05-01 14:04:39.273027",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "flower-2",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "SO",
+   "link_to": "EDU SO",
+   "link_type": "DocType",
+   "navigate_to_tab": "",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Curriculum",
+   "link_to": "EDU Curriculum",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Course",
+   "link_to": "EDU Course",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Section",
+   "link_to": "EDU Section",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Evaluation Year",
+   "link_to": "EDU Evaluation Year",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Assessment Tool",
+   "link_to": "EDU Assessment Tool",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Course CI",
+   "link_to": "EDU Course CI",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-01 14:30:35.534265",
+ "modified_by": "Administrator",
+ "module": "EDU IE",
+ "name": "EDU IE",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "EDU IE"
+}

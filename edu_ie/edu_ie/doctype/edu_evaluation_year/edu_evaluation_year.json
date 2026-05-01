@@ -1,7 +1,6 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:evaluation_year_th",
  "creation": "2026-04-30 13:52:11.264815",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,26 +10,26 @@
  ],
  "fields": [
   {
-   "fieldname": "evaluation_year_th",
-   "fieldtype": "Int",
-   "label": "Evaluation Year (TH)",
-   "unique": 1
-  },
-  {
    "fieldname": "evaluation_year_en",
    "fieldtype": "Int",
    "label": "Evaluation Year (EN)",
    "read_only": 1
+  },
+  {
+   "fieldname": "evaluation_year_th",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Evaluation Year (TH)",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-30 13:53:44.861003",
+ "modified": "2026-05-01 10:50:14.461838",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Evaluation Year",
- "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -48,7 +47,6 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "search_fields": "evaluation_year_th",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []

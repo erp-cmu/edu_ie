@@ -17,23 +17,20 @@ class EDUCurriculum(Document):
 
 		abbreviation: DF.Data
 		curriculum_name_en: DF.Data
-		revision_year: DF.Data
+		revision_year_en: DF.Int
+		revision_year_th: DF.Int
 	# end: auto-generated types
-
-	def validate(self):
-		if self.revision_year:
-			revision_year_int = int(self.revision_year)
-			if (revision_year_int < 2500) or (revision_year_int >= 2600):  # Check Thai Year
-				frappe.throw("Revision Year should be in Thai year (25XX format).")
 
 	def autoname(self):
 		# Check Thai Year
-		if self.revision_year:
-			try:
-				revision_year_int = int(self.revision_year)
-				if revision_year_int > 2500:
-					self.revision_year = str(revision_year_int - 543)
-			except ValueError:
-				pass
-		if self.abbreviation and self.revision_year:
-			self.name = f"{self.abbreviation} - {self.revision_year}"
+		if self.revision_year_th:
+			revision_year_th_int = int(self.revision_year_th)
+			if (revision_year_th_int < 2500) or (revision_year_th_int >= 2700):  # Check Thai Year
+				frappe.throw("Revision Year should be in Thai year (25XX format).")
+			else:
+				# Convert Thai Year to English Year
+				self.revision_year_en = str(revision_year_th_int - 543)
+
+		# Set name as abbreviation and revision year
+		if self.abbreviation and self.revision_year_th:
+			self.name = f"{self.abbreviation}-{self.revision_year_en}"

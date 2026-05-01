@@ -5,32 +5,33 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "generat_information_column",
+  "general_information_section",
   "course_name_en",
+  "course_name_th",
   "course_number",
   "abbreviation",
   "course_number_abbreviation"
  ],
  "fields": [
   {
-   "fieldname": "generat_information_column",
-   "fieldtype": "Column Break",
-   "label": "Generat Information"
-  },
-  {
    "fieldname": "course_number",
-   "fieldtype": "Data",
-   "label": "Course Number"
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Course Number",
+   "reqd": 1
   },
   {
    "fieldname": "abbreviation",
    "fieldtype": "Data",
-   "label": "Abbreviation"
+   "label": "Abbreviation",
+   "reqd": 1
   },
   {
    "fieldname": "course_name_en",
    "fieldtype": "Data",
-   "label": "Course Name (EN)"
+   "in_list_view": 1,
+   "label": "Course Name (EN)",
+   "reqd": 1
   },
   {
    "fieldname": "course_number_abbreviation",
@@ -38,16 +39,26 @@
    "label": "Course Number Abbreviation",
    "read_only": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "course_name_th",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Course Name (TH)"
+  },
+  {
+   "fieldname": "general_information_section",
+   "fieldtype": "Section Break",
+   "label": "General Information"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-29 16:01:19.438351",
+ "modified": "2026-05-01 11:40:38.078020",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Course",
- "naming_rule": "By script",
  "owner": "Administrator",
  "permissions": [
   {

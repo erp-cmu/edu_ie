@@ -8,7 +8,8 @@
   "general_information",
   "curriculum_name_en",
   "abbreviation",
-  "revision_year"
+  "revision_year_th",
+  "revision_year_en"
  ],
  "fields": [
   {
@@ -32,17 +33,23 @@
    "reqd": 1
   },
   {
-   "fieldname": "revision_year",
-   "fieldtype": "Data",
+   "fieldname": "revision_year_th",
+   "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Revision Year",
+   "label": "Revision Year (TH)",
    "reqd": 1
+  },
+  {
+   "fieldname": "revision_year_en",
+   "fieldtype": "Int",
+   "label": "Revision Year (EN)",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-04-30 13:11:57.997120",
+ "modified": "2026-05-01 11:46:12.910341",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Curriculum",

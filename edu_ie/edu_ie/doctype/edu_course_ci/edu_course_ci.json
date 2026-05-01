@@ -18,7 +18,24 @@
   "abet2_tab",
   "course_assessment_section",
   "rubric_table",
-  "cso_evaluation_table"
+  "course_evaluation_section",
+  "cso_evaluation_table",
+  "files_tab",
+  "course_files_section",
+  "abet1_file",
+  "abet2_file",
+  "raw_scores_files_section",
+  "raw_score_1",
+  "raw_score_2",
+  "raw_score_3",
+  "raw_score_4",
+  "student_work_files_section",
+  "student_work_1",
+  "student_work_2",
+  "student_work_3",
+  "student_work_4",
+  "student_work_5",
+  "student_work_6"
  ],
  "fields": [
   {
@@ -51,8 +68,7 @@
    "fieldname": "sections",
    "fieldtype": "Table MultiSelect",
    "label": "Section(s)",
-   "options": "EDU Section Link",
-   "reqd": 1
+   "options": "EDU Section Link"
   },
   {
    "fieldname": "abet1_tab",
@@ -62,7 +78,8 @@
   {
    "fieldname": "abet2_tab",
    "fieldtype": "Tab Break",
-   "label": "ABET2"
+   "label": "ABET2",
+   "read_only": 1
   },
   {
    "fieldname": "general_information_section",
@@ -73,7 +90,8 @@
    "fieldname": "evaluation_year",
    "fieldtype": "Link",
    "label": "Evaluation Year",
-   "options": "EDU Evaluation Year"
+   "options": "EDU Evaluation Year",
+   "reqd": 1
   },
   {
    "fieldname": "cso_so_mapping",
@@ -108,19 +126,106 @@
    "fieldtype": "Table",
    "label": "CSO Evaluation",
    "options": "EDU Course CI Eval"
+  },
+  {
+   "fieldname": "course_evaluation_section",
+   "fieldtype": "Section Break",
+   "label": "Course Evaluation"
+  },
+  {
+   "fieldname": "files_tab",
+   "fieldtype": "Tab Break",
+   "label": "Files"
+  },
+  {
+   "fieldname": "abet1_file",
+   "fieldtype": "Attach",
+   "label": "ABET1 File"
+  },
+  {
+   "fieldname": "abet2_file",
+   "fieldtype": "Attach",
+   "label": "ABET2 File"
+  },
+  {
+   "fieldname": "course_files_section",
+   "fieldtype": "Section Break",
+   "label": "Course Files"
+  },
+  {
+   "fieldname": "raw_scores_files_section",
+   "fieldtype": "Section Break",
+   "label": "Raw Score Files"
+  },
+  {
+   "fieldname": "raw_score_1",
+   "fieldtype": "Attach",
+   "label": "Raw Score 1"
+  },
+  {
+   "fieldname": "raw_score_2",
+   "fieldtype": "Attach",
+   "label": "Raw Score 2"
+  },
+  {
+   "fieldname": "raw_score_3",
+   "fieldtype": "Attach",
+   "label": "Raw Score 3"
+  },
+  {
+   "fieldname": "raw_score_4",
+   "fieldtype": "Attach",
+   "label": "Raw Score 4"
+  },
+  {
+   "fieldname": "student_work_files_section",
+   "fieldtype": "Section Break",
+   "label": "Student Work Files"
+  },
+  {
+   "fieldname": "student_work_1",
+   "fieldtype": "Attach",
+   "label": "Student Work 1"
+  },
+  {
+   "fieldname": "student_work_2",
+   "fieldtype": "Attach",
+   "label": "Student Work 2"
+  },
+  {
+   "fieldname": "student_work_3",
+   "fieldtype": "Attach",
+   "label": "Student Work 3"
+  },
+  {
+   "fieldname": "student_work_4",
+   "fieldtype": "Attach",
+   "label": "Student Work 4"
+  },
+  {
+   "fieldname": "student_work_5",
+   "fieldtype": "Attach",
+   "label": "Student Work 5"
+  },
+  {
+   "fieldname": "student_work_6",
+   "fieldtype": "Attach",
+   "label": "Student Work 6"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-30 15:18:08.017490",
+ "modified": "2026-05-01 11:58:31.434373",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Course CI",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -129,7 +234,9 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

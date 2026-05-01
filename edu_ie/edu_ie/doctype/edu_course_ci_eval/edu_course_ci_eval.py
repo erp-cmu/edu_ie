@@ -25,7 +25,8 @@ class EDUCourseCIEval(Document):
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
-		question: DF.Data | None
+		question_number: DF.Data | None
+		total_students: DF.Int
 	# end: auto-generated types
 
 	pass

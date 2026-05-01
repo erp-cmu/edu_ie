@@ -11,15 +11,15 @@ app_license = "mit"
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "edu_ie",
-# 		"logo": "/assets/edu_ie/logo.png",
-# 		"title": "EDU IE",
-# 		"route": "/edu_ie",
-# 		"has_permission": "edu_ie.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "edu_ie",
+		"logo": "/assets/edu_ie/edu_ie_logo.png",
+		"title": "EDU IE",
+		"route": "/edu_ie",
+		# "has_permission": "edu_ie.api.permission.has_app_permission",
+	}
+]
 
 # Includes in <head>
 # ------------------

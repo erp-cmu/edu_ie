@@ -1,7 +1,6 @@
-exclude: 'node_modules|.git'
+exclude: "node_modules|.git"
 default_stages: [pre-commit]
 fail_fast: false
-
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -13,6 +12,7 @@ repos:
       - id: check-merge-conflict
       - id: check-ast
       - id: check-json
+        exclude: ^\.vscode/
       - id: check-toml
       - id: check-yaml
       - id: debug-statements
@@ -37,33 +37,32 @@ repos:
         types_or: [javascript, vue, scss]
         # Ignore any files that might contain jinja / bundles
         exclude: |
-            (?x)^(
-                edu_ie/public/dist/.*|
-                .*node_modules.*|
-                .*boilerplate.*|
-                edu_ie/templates/includes/.*|
-                edu_ie/public/js/lib/.*
-            )$
-
+          (?x)^(
+              edu_ie/public/dist/.*|
+              .*node_modules.*|
+              .*boilerplate.*|
+              edu_ie/templates/includes/.*|
+              edu_ie/public/js/lib/.*
+          )$
 
   - repo: https://github.com/pre-commit/mirrors-eslint
     rev: v8.44.0
     hooks:
       - id: eslint
         types_or: [javascript]
-        args: ['--quiet']
+        args: ["--quiet"]
         # Ignore any files that might contain jinja / bundles
         exclude: |
-            (?x)^(
-                edu_ie/public/dist/.*|
-                cypress/.*|
-                .*node_modules.*|
-                .*boilerplate.*|
-                edu_ie/templates/includes/.*|
-                edu_ie/public/js/lib/.*
-            )$
+          (?x)^(
+              edu_ie/public/dist/.*|
+              cypress/.*|
+              .*node_modules.*|
+              .*boilerplate.*|
+              edu_ie/templates/includes/.*|
+              edu_ie/public/js/lib/.*
+          )$
 
 ci:
-    autoupdate_schedule: weekly
-    skip: []
-    submodules: false
+  autoupdate_schedule: weekly
+  skip: []
+  submodules: false

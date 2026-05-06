@@ -15,8 +15,8 @@ class EDUCourseCICSOSOMap(Document):
 		from frappe.types import DF
 
 		cso_number: DF.Int
-		description_en: DF.Data | None
-		description_th: DF.Data | None
+		description_en: DF.SmallText | None
+		description_th: DF.SmallText | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data

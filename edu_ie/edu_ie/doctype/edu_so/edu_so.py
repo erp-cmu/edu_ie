@@ -14,8 +14,8 @@ class EDUSO(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		description_en: DF.Data | None
-		description_th: DF.Data | None
+		description_en: DF.SmallText | None
+		description_th: DF.SmallText | None
 		so_number: DF.Int
 	# end: auto-generated types
 

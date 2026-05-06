@@ -28,23 +28,25 @@
   {
    "fetch_from": "so.description_en",
    "fieldname": "description_en",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Description (EN)"
+   "label": "Description (EN) (For Ref Only)",
+   "read_only": 1
   },
   {
    "fetch_from": "so.description_th",
    "fieldname": "description_th",
-   "fieldtype": "Data",
-   "label": "Description (TH)"
+   "fieldtype": "Small Text",
+   "label": "Description (TH) (For Ref Only)",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-04-30 14:24:35.999129",
- "modified_by": "Administrator",
+ "modified": "2026-05-06 11:03:35.881435",
+ "modified_by": "erp_admin@cmu.com",
  "module": "EDU IE",
  "name": "EDU Course CI CSO SO Map",
  "owner": "Administrator",

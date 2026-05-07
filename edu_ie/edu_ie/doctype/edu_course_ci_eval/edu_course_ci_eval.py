@@ -17,6 +17,7 @@ class EDUCourseCIEval(Document):
 		assessment_tool: DF.Link
 		average_score: DF.Float
 		cso_number: DF.Int
+		discussion_cso: DF.SmallText | None
 		number_student_score_0: DF.Int
 		number_student_score_1: DF.Int
 		number_student_score_2: DF.Int

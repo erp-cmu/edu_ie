@@ -38,6 +38,7 @@ class EDUCourseCI(Document):
 		cso_so_mapping: DF.Table[EDUCourseCICSOSOMap]
 		cso_table: DF.Table[EDUCourseCICSO]
 		curriculum: DF.Link
+		discussion_course: DF.LongText | None
 		evaluation_year: DF.Link
 		raw_score_1: DF.Attach | None
 		raw_score_2: DF.Attach | None
@@ -163,9 +164,45 @@ class EDUCourseCI(Document):
 					"Attachment Handling Exception",
 				)
 
+	def check_cso_mapping(self):
+		table_cso_numbers = [item.get("cso_number", -1) for item in self.cso_table]  # [1,2]
+		mapping_cso_numbers = [item.get("cso_number", -1) for item in self.cso_so_mapping]  # [1,2]
+		mapping_sos = [item.get("so", -1) for item in self.cso_so_mapping]  # ['SO-1', 'SO-2']
+
+		# Check for unique CSO in CSO table
+		if len(table_cso_numbers) != len(set(table_cso_numbers)):
+			frappe.throw('Duplicated CSOs in "CSO Entries" table.')
+
+		# Check for unmatched CSOs in the mapping table and the cso table.
+		for map_cso in mapping_cso_numbers:
+			if map_cso not in table_cso_numbers:
+				frappe.throw(f'CSO-{map_cso} in "CSO-SO Mapping" table was not found in "CSO Entries" table.')
+
+		for cso in table_cso_numbers:
+			if cso not in mapping_cso_numbers:
+				frappe.throw(f'There is no SO mapping found for CSO-{cso} in "CSO Entries" table.')
+
+		msg = ""
+
+		if len(mapping_cso_numbers) != len(set(mapping_cso_numbers)):
+			msg = (
+				msg
+				+ "• CSO-SO mapping is not 1-1. This is not encouraged. Please check with the instructor(s).<br>"
+			)
+
+		if len(mapping_sos) != len(set(mapping_sos)):
+			msg = (
+				msg
+				+ '• In "CSO-SO Mapping" table, multiple CSOs are mapped to a single SO. Please check with the instructor(s).'
+			)
+
+		if msg != "":
+			frappe.msgprint(msg)
+
 	def before_save(self):
 		self.calculate_average_score()
 		self.change_filenames()
+		self.check_cso_mapping()
 
 
 def is_already_renamed(filepath):

@@ -169,31 +169,37 @@ class EDUCourseCI(Document):
 		mapping_cso_numbers = [item.get("cso_number", -1) for item in self.cso_so_mapping]  # [1,2]
 		mapping_sos = [item.get("so", -1) for item in self.cso_so_mapping]  # ['SO-1', 'SO-2']
 
-		# Check for unique CSO in CSO table
+		# Check for uniqueness of CSO numbers in the cso table.
 		if len(table_cso_numbers) != len(set(table_cso_numbers)):
-			frappe.throw('Duplicated CSOs in "CSO Entries" table.')
+			frappe.throw(
+				'Duplicate CSO numbers found in "CSO Entries" table. Each CSO should have a unique number.'
+			)
 
-		# Check for unmatched CSOs in the mapping table and the cso table.
+		# Check for unmatched CSO numbers between the mapping and the table.
 		for map_cso in mapping_cso_numbers:
 			if map_cso not in table_cso_numbers:
-				frappe.throw(f'CSO-{map_cso} in "CSO-SO Mapping" table was not found in "CSO Entries" table.')
+				frappe.throw(
+					f'CSO-{map_cso} in "CSO-SO Mapping" table was not found in "CSO Entries" table. Please check the mapping and entries tables.'
+				)
 
+		# Check for unmatched CSO numbers between the table and the mapping.
 		for cso in table_cso_numbers:
 			if cso not in mapping_cso_numbers:
-				frappe.throw(f'There is no SO mapping found for CSO-{cso} in "CSO Entries" table.')
+				frappe.throw(
+					f'There is no SO mapping found for CSO-{cso} in "CSO Entries" table. Please check the mapping and entries tables.'
+				)
 
 		msg = ""
-
 		if len(mapping_cso_numbers) != len(set(mapping_cso_numbers)):
 			msg = (
 				msg
-				+ "• CSO-SO mapping is not 1-1. This is not encouraged. Please check with the instructor(s).<br>"
+				+ '• Duplicate CSO numbers found in "CSO-SO Mapping" table. Each CSO should be mapped only once. Please check with the instructor(s).'
 			)
 
 		if len(mapping_sos) != len(set(mapping_sos)):
 			msg = (
 				msg
-				+ '• In "CSO-SO Mapping" table, multiple CSOs are mapped to a single SO. Please check with the instructor(s).'
+				+ '• Duplicate SO entries found in "CSO-SO Mapping" table. Each SO should be mapped to only one CSO. Please check with the instructor(s).'
 			)
 
 		if msg != "":

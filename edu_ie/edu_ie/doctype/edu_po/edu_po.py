@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class EDUSO(Document):
+class EDUPO(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -16,8 +16,8 @@ class EDUSO(Document):
 
 		description_en: DF.SmallText | None
 		description_th: DF.SmallText | None
-		so_number: DF.Int
+		po_number: DF.Int
 	# end: auto-generated types
 
 	def autoname(self):
-		self.name = f"SO-{self.so_number}"
+		self.name = f"PO-{self.po_number}"

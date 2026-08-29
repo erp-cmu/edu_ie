@@ -11,9 +11,9 @@ EXTRA_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
-class IntegrationTestEDUSO(IntegrationTestCase):
+class IntegrationTestEDUPO(IntegrationTestCase):
 	"""
-	Integration tests for EDUSO.
+	Integration tests for EDUPO.
 	Use this class for testing interactions between multiple components.
 	"""
 

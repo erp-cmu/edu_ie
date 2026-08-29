@@ -1,25 +1,53 @@
 {
  "actions": [],
+ "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-04-30 14:12:52.842871",
+ "creation": "2026-08-29 16:46:43.954727",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "so_number",
+  "curriculum",
+  "po",
+  "tk",
+  "number",
   "description_en",
   "description_th"
  ],
  "fields": [
   {
-   "fieldname": "so_number",
+   "fieldname": "po",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "PO",
+   "options": "EDU PO",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tk",
+   "fieldtype": "Link",
+   "label": "TK",
+   "options": "EDU TK"
+  },
+  {
+   "fieldname": "curriculum",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Curriculum",
+   "options": "EDU Curriculum",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "number",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "SO#"
+   "label": "Number",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "description_en",
    "fieldtype": "Small Text",
-   "in_list_view": 1,
    "label": "Description (EN)"
   },
   {
@@ -31,10 +59,10 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-05-06 10:59:55.645082",
- "modified_by": "erp_admin@cmu.com",
+ "modified": "2026-08-29 17:08:15.266323",
+ "modified_by": "Administrator",
  "module": "EDU IE",
- "name": "EDU SO",
+ "name": "EDU PI",
  "owner": "Administrator",
  "permissions": [
   {

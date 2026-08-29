@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-08-29 16:33:54.213453",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_xhug",
+  "tk_number",
+  "description_en",
+  "description_th"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_xhug",
+   "fieldtype": "Section Break",
+   "label": "TK#"
+  },
+  {
+   "fieldname": "tk_number",
+   "fieldtype": "Int",
+   "label": "TK#"
+  },
+  {
+   "fieldname": "description_en",
+   "fieldtype": "Small Text",
+   "label": "Description (EN)"
+  },
+  {
+   "fieldname": "description_th",
+   "fieldtype": "Small Text",
+   "label": "Description (TH)"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-08-29 17:00:36.566367",
+ "modified_by": "Administrator",
+ "module": "EDU IE",
+ "name": "EDU TK",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "mask": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

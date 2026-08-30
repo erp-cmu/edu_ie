@@ -20,23 +20,20 @@ class EDUCourseCI(Document):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
-		from frappe.types import DF
-
-		from edu_ie.edu_ie.doctype.edu_course_ci_cso.edu_course_ci_cso import EDUCourseCICSO
-		from edu_ie.edu_ie.doctype.edu_course_ci_cso_so_map.edu_course_ci_cso_so_map import (
-			EDUCourseCICSOSOMap,
-		)
+		from edu_ie.edu_ie.doctype.edu_course_ci_clo.edu_course_ci_clo import EDUCourseCICLO
+		from edu_ie.edu_ie.doctype.edu_course_ci_clo_pi_map.edu_course_ci_clo_pi_map import EDUCourseCICLOPIMap
 		from edu_ie.edu_ie.doctype.edu_course_ci_eval.edu_course_ci_eval import EDUCourseCIEval
 		from edu_ie.edu_ie.doctype.edu_course_ci_rubric.edu_course_ci_rubric import EDUCourseCIRubric
 		from edu_ie.edu_ie.doctype.edu_section_link.edu_section_link import EDUSectionLink
+		from frappe.types import DF
 
 		abet1_file: DF.Attach | None
 		abet2_file: DF.Attach | None
 		amended_from: DF.Link | None
+		clo_pi_mapping: DF.Table[EDUCourseCICLOPIMap]
+		clo_table: DF.Table[EDUCourseCICLO]
 		course: DF.Link
 		cso_evaluation_table: DF.Table[EDUCourseCIEval]
-		cso_so_mapping: DF.Table[EDUCourseCICSOSOMap]
-		cso_table: DF.Table[EDUCourseCICSO]
 		curriculum: DF.Link
 		discussion_course: DF.LongText | None
 		evaluation_year: DF.Link

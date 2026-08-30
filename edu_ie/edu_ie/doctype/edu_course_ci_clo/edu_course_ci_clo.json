@@ -1,55 +1,44 @@
 {
  "actions": [],
- "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-04-30 14:11:30.112973",
+ "creation": "2026-04-30 13:25:41.550725",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "cso_number",
-  "so",
+  "clo_number",
   "description_en",
   "description_th"
  ],
  "fields": [
   {
-   "fieldname": "cso_number",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "CSO#"
-  },
-  {
-   "fieldname": "so",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "SO#",
-   "options": "EDU PO"
-  },
-  {
-   "fetch_from": "so.description_en",
    "fieldname": "description_en",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Description (EN) (For Ref Only)",
-   "read_only": 1
+   "label": "Description (EN)"
   },
   {
-   "fetch_from": "so.description_th",
    "fieldname": "description_th",
    "fieldtype": "Small Text",
-   "label": "Description (TH) (For Ref Only)",
-   "read_only": 1
+   "in_list_view": 1,
+   "label": "Description (TH)"
+  },
+  {
+   "fieldname": "clo_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "CLO#",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-08-29 16:32:49.003887",
+ "modified": "2026-08-30 11:08:02.187084",
  "modified_by": "Administrator",
  "module": "EDU IE",
- "name": "EDU Course CI CSO SO Map",
+ "name": "EDU Course CI CLO",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

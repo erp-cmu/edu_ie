@@ -7,6 +7,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_xhug",
+  "curriculum",
   "tk_number",
   "description_en",
   "description_th"
@@ -30,12 +31,20 @@
    "fieldname": "description_th",
    "fieldtype": "Small Text",
    "label": "Description (TH)"
+  },
+  {
+   "fieldname": "curriculum",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Curriculum",
+   "options": "EDU Curriculum",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-29 17:12:02.806815",
+ "modified": "2026-08-30 10:24:41.104050",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU TK",

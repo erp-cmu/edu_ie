@@ -9,19 +9,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "indent": 0,
-   "keep_closed": 0,
-   "label": "SO",
-   "link_to": "EDU SO",
-   "link_type": "DocType",
-   "navigate_to_tab": "",
-   "show_arrow": 0,
-   "type": "Link"
-  },
-  {
-   "child": 0,
-   "collapsible": 1,
-   "icon": "",
+   "icon": "list",
    "indent": 0,
    "keep_closed": 0,
    "label": "Curriculum",
@@ -33,7 +21,43 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "",
+   "icon": "list",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "PO",
+   "link_to": "EDU PO",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "icon": "list",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "TK",
+   "link_to": "EDU TK",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 1,
+   "collapsible": 1,
+   "icon": "list",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "PI",
+   "link_to": "EDU PI",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "list",
    "indent": 0,
    "keep_closed": 0,
    "label": "Course",
@@ -45,7 +69,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "",
+   "icon": "list",
    "indent": 0,
    "keep_closed": 0,
    "label": "Section",
@@ -57,7 +81,7 @@
   {
    "child": 0,
    "collapsible": 1,
-   "icon": "",
+   "icon": "list",
    "indent": 0,
    "keep_closed": 0,
    "label": "Evaluation Year",
@@ -69,6 +93,7 @@
   {
    "child": 0,
    "collapsible": 1,
+   "icon": "list",
    "indent": 0,
    "keep_closed": 0,
    "label": "Assessment Tool",
@@ -80,6 +105,7 @@
   {
    "child": 0,
    "collapsible": 1,
+   "icon": "list",
    "indent": 0,
    "keep_closed": 0,
    "label": "Course CI",
@@ -89,11 +115,11 @@
    "type": "Link"
   }
  ],
- "modified": "2026-05-01 14:30:35.534265",
+ "modified": "2026-08-30 10:35:52.156793",
  "modified_by": "Administrator",
  "module": "EDU IE",
- "name": "EDU IE",
+ "name": "IE Undergrad",
  "owner": "Administrator",
  "standard": 1,
- "title": "EDU IE"
+ "title": "IE Undergrad"
 }

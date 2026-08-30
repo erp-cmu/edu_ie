@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "curriculum",
   "po_number",
   "description_en",
   "description_th"
@@ -26,13 +27,21 @@
    "fieldname": "po_number",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "PO#"
+   "label": "PO#",
+   "reqd": 1
+  },
+  {
+   "fieldname": "curriculum",
+   "fieldtype": "Link",
+   "label": "Curriculum",
+   "options": "EDU Curriculum",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-29 16:33:00.631091",
+ "modified": "2026-08-30 09:26:39.192909",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU PO",

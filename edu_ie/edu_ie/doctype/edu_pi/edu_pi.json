@@ -9,7 +9,7 @@
   "curriculum",
   "po",
   "tk",
-  "number",
+  "pi_number",
   "description_en",
   "description_th"
  ],
@@ -37,15 +37,6 @@
    "reqd": 1
   },
   {
-   "default": "1",
-   "fieldname": "number",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Number",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
    "fieldname": "description_en",
    "fieldtype": "Small Text",
    "label": "Description (EN)"
@@ -54,12 +45,21 @@
    "fieldname": "description_th",
    "fieldtype": "Small Text",
    "label": "Description (TH)"
+  },
+  {
+   "default": "1",
+   "fieldname": "pi_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Number",
+   "non_negative": 1,
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-29 17:08:15.266323",
+ "modified": "2026-08-30 10:43:18.871955",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU PI",

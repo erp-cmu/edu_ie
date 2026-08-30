@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class EDUCourseCICSOSOMap(Document):
+class EDUCourseCICLO(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,13 +14,12 @@ class EDUCourseCICSOSOMap(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		cso_number: DF.Int
+		clo_number: DF.Int
 		description_en: DF.SmallText | None
 		description_th: DF.SmallText | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
-		so: DF.Link | None
 	# end: auto-generated types
 
 	pass

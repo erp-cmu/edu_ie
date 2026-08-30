@@ -14,7 +14,7 @@ class EDUCourseCIRubric(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		cso_number: DF.Int
+		clo_number: DF.Int
 		description_score_0: DF.SmallText
 		description_score_1: DF.SmallText
 		description_score_2: DF.SmallText

@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_bulk_edit": 1,
  "allow_rename": 1,
  "creation": "2026-04-30 13:21:31.726772",
  "doctype": "DocType",
@@ -13,8 +14,8 @@
   "curriculum",
   "sections",
   "cso_so_section",
-  "cso_table",
-  "cso_so_mapping",
+  "clo_table",
+  "clo_pi_mapping",
   "abet2_tab",
   "course_assessment_section",
   "rubric_table",
@@ -75,12 +76,12 @@
   {
    "fieldname": "abet1_tab",
    "fieldtype": "Tab Break",
-   "label": "ABET1"
+   "label": "TABEE1"
   },
   {
    "fieldname": "abet2_tab",
    "fieldtype": "Tab Break",
-   "label": "ABET2",
+   "label": "TABEE2",
    "read_only": 1
   },
   {
@@ -96,21 +97,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "cso_so_mapping",
-   "fieldtype": "Table",
-   "label": "CSO-SO Mapping",
-   "options": "EDU Course CI CSO SO Map"
-  },
-  {
    "fieldname": "cso_so_section",
    "fieldtype": "Section Break",
    "label": "CSO and SO"
-  },
-  {
-   "fieldname": "cso_table",
-   "fieldtype": "Table",
-   "label": "CSO Entries",
-   "options": "EDU Course CI CSO"
   },
   {
    "fieldname": "rubric_table",
@@ -142,12 +131,12 @@
   {
    "fieldname": "abet1_file",
    "fieldtype": "Attach",
-   "label": "ABET1 File"
+   "label": "TABEE1 File"
   },
   {
    "fieldname": "abet2_file",
    "fieldtype": "Attach",
-   "label": "ABET2 File"
+   "label": "TABEE2 File"
   },
   {
    "fieldname": "course_files_section",
@@ -223,14 +212,26 @@
    "fieldname": "discussion_course",
    "fieldtype": "Long Text",
    "label": "Discussion for Course Improvement"
+  },
+  {
+   "fieldname": "clo_table",
+   "fieldtype": "Table",
+   "label": "CLO Entries",
+   "options": "EDU Course CI CLO"
+  },
+  {
+   "fieldname": "clo_pi_mapping",
+   "fieldtype": "Table",
+   "label": "CLO-PI Mapping",
+   "options": "EDU Course CI CLO PI Map"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-05-07 10:31:36.350929",
- "modified_by": "erp_admin@cmu.com",
+ "modified": "2026-08-30 11:16:24.109113",
+ "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Course CI",
  "owner": "Administrator",

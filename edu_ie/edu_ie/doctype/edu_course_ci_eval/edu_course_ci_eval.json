@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_bulk_edit": 1,
  "allow_rename": 1,
  "creation": "2026-04-30 15:04:29.567074",
  "doctype": "DocType",
@@ -7,7 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "cso_evaluation_section",
-  "cso_number",
+  "clo_number",
   "assessment_tool",
   "question_number",
   "column_break_seqe",
@@ -22,14 +23,6 @@
   "discussion_cso"
  ],
  "fields": [
-  {
-   "columns": 1,
-   "fieldname": "cso_number",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "CSO#",
-   "reqd": 1
-  },
   {
    "fieldname": "assessment_tool",
    "fieldtype": "Link",
@@ -117,15 +110,23 @@
    "fieldname": "discussion_cso",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Discussion for Improvement (CSO)"
+   "label": "Discussion for Improvement (CLO)"
+  },
+  {
+   "columns": 1,
+   "fieldname": "clo_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "CLO#",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-05-07 10:29:56.745018",
- "modified_by": "erp_admin@cmu.com",
+ "modified": "2026-08-30 11:17:46.296817",
+ "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Course CI Eval",
  "owner": "Administrator",

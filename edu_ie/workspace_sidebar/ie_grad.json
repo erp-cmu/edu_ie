@@ -1,0 +1,28 @@
+{
+ "app": "edu_ie",
+ "creation": "2026-08-30 09:49:35.510412",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "presentation",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Assessment",
+   "link_to": "EDU Assessment Tool",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-30 09:56:43.316059",
+ "modified_by": "Administrator",
+ "module": "EDU IE",
+ "name": "IE Grad",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "IE Grad"
+}

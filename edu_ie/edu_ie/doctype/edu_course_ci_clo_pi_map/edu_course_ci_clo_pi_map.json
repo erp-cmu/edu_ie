@@ -1,12 +1,14 @@
 {
  "actions": [],
+ "allow_bulk_edit": 1,
  "allow_rename": 1,
- "creation": "2026-04-30 13:25:41.550725",
+ "creation": "2026-04-30 14:11:30.112973",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "cso_number",
+  "so",
   "description_en",
   "description_th"
  ],
@@ -15,29 +17,41 @@
    "fieldname": "cso_number",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "CSO#"
+   "label": "CLO#",
+   "reqd": 1
   },
   {
+   "fieldname": "so",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "PI#",
+   "options": "EDU PI",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "so.description_en",
    "fieldname": "description_en",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Description (EN)"
+   "label": "Description (EN) (For Ref Only)",
+   "read_only": 1
   },
   {
+   "fetch_from": "so.description_th",
    "fieldname": "description_th",
    "fieldtype": "Small Text",
-   "in_list_view": 1,
-   "label": "Description (TH)"
+   "label": "Description (TH) (For Ref Only)",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-05-06 11:02:03.381666",
- "modified_by": "erp_admin@cmu.com",
+ "modified": "2026-08-30 11:12:10.082156",
+ "modified_by": "Administrator",
  "module": "EDU IE",
- "name": "EDU Course CI CSO",
+ "name": "EDU Course CI CLO PI Map",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

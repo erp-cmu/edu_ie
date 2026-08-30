@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class EDUCourseCICSO(Document):
+class EDUCourseCICLOPIMap(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -20,6 +20,7 @@ class EDUCourseCICSO(Document):
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
+		so: DF.Link
 	# end: auto-generated types
 
 	pass

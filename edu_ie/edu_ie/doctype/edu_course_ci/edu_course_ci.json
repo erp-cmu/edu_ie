@@ -13,7 +13,7 @@
   "course",
   "curriculum",
   "sections",
-  "cso_so_section",
+  "cio_pi_section",
   "clo_table",
   "clo_pi_mapping",
   "abet2_tab",
@@ -95,11 +95,6 @@
    "label": "Evaluation Year",
    "options": "EDU Evaluation Year",
    "reqd": 1
-  },
-  {
-   "fieldname": "cso_so_section",
-   "fieldtype": "Section Break",
-   "label": "CSO and SO"
   },
   {
    "fieldname": "rubric_table",
@@ -224,13 +219,18 @@
    "fieldtype": "Table",
    "label": "CLO-PI Mapping",
    "options": "EDU Course CI CLO PI Map"
+  },
+  {
+   "fieldname": "cio_pi_section",
+   "fieldtype": "Section Break",
+   "label": "CLO and PI"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-30 11:16:24.109113",
+ "modified": "2026-08-30 12:31:44.111666",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Course CI",

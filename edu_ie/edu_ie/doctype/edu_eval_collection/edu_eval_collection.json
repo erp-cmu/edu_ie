@@ -8,10 +8,20 @@
  "field_order": [
   "general_information_section",
   "amended_from",
+  "curriculum",
   "evaluation_year",
   "course",
-  "curriculum",
-  "sections"
+  "clo",
+  "student_section",
+  "floor_c4",
+  "column_break_vrkn",
+  "floor_c3",
+  "column_break_obcp",
+  "floor_c2",
+  "column_break_lpck",
+  "floor_c1",
+  "section_break_ybsv",
+  "scores"
  ],
  "fields": [
   {
@@ -19,7 +29,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "EDU Course CI Eval Raw",
+   "options": "EDU Eval Collection",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -33,8 +43,10 @@
   {
    "fieldname": "course",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Course",
-   "options": "EDU Course"
+   "options": "EDU Course",
+   "reqd": 1
   },
   {
    "fieldname": "curriculum",
@@ -43,28 +55,79 @@
    "options": "EDU Curriculum"
   },
   {
-   "fieldname": "sections",
-   "fieldtype": "Table MultiSelect",
-   "label": "Section(s)",
-   "options": "EDU Section Link"
-  },
-  {
    "fieldname": "general_information_section",
    "fieldtype": "Section Break",
    "label": "General Information"
+  },
+  {
+   "fieldname": "student_section",
+   "fieldtype": "Section Break",
+   "label": "Score Floors"
+  },
+  {
+   "fieldname": "clo",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "CLO",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "floor_c4",
+   "fieldtype": "Float",
+   "label": "FL 4"
+  },
+  {
+   "fieldname": "floor_c3",
+   "fieldtype": "Float",
+   "label": "FL 3"
+  },
+  {
+   "fieldname": "floor_c2",
+   "fieldtype": "Float",
+   "label": "FL 2"
+  },
+  {
+   "fieldname": "floor_c1",
+   "fieldtype": "Float",
+   "label": "FL 1"
+  },
+  {
+   "fieldname": "scores",
+   "fieldtype": "Table",
+   "label": "Scores",
+   "options": "EDU Eval Collection Table"
+  },
+  {
+   "fieldname": "column_break_vrkn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ybsv",
+   "fieldtype": "Section Break",
+   "label": "Scores"
+  },
+  {
+   "fieldname": "column_break_obcp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lpck",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-30 12:31:11.881423",
+ "modified": "2026-08-30 16:45:12.772966",
  "modified_by": "Administrator",
  "module": "EDU IE",
- "name": "EDU Course CI Eval Raw",
+ "name": "EDU Eval Collection",
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

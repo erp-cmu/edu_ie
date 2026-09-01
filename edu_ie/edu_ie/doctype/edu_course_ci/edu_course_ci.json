@@ -92,6 +92,7 @@
   {
    "fieldname": "evaluation_year",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Evaluation Year",
    "options": "EDU Evaluation Year",
    "reqd": 1
@@ -230,7 +231,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-30 12:31:44.111666",
+ "modified": "2026-09-01 18:15:38.834626",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Course CI",

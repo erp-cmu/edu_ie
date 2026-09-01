@@ -7,9 +7,12 @@
  "engine": "InnoDB",
  "field_order": [
   "student_id",
+  "curriculum",
+  "column_break_ebaw",
   "firstname_th",
   "lastname_th",
-  "curriculum"
+  "firstname_en",
+  "lastname_en"
  ],
  "fields": [
   {
@@ -22,24 +25,51 @@
   {
    "fieldname": "firstname_th",
    "fieldtype": "Data",
-   "label": "Firstname (TH)"
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Firstname (TH)",
+   "reqd": 1
   },
   {
    "fieldname": "lastname_th",
    "fieldtype": "Data",
-   "label": "Lastname (TH)"
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Lastname (TH)",
+   "reqd": 1
   },
   {
    "fieldname": "curriculum",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Curriculum",
-   "options": "EDU Curriculum"
+   "options": "EDU Curriculum",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ebaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "firstname_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Firstname (EN)"
+  },
+  {
+   "fieldname": "lastname_en",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Lastname (EN)"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-30 16:05:00.811719",
+ "modified": "2026-09-01 20:15:07.446775",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU Student",
@@ -60,6 +90,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "search_fields": "firstname_th,lastname_th,firstname_en,lastname_en",
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []

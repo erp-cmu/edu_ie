@@ -17,9 +17,11 @@ class EDUStudent(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		curriculum: DF.Link | None
-		firstname_th: DF.Data | None
-		lastname_th: DF.Data | None
+		curriculum: DF.Link
+		firstname_en: DF.Data | None
+		firstname_th: DF.Data
+		lastname_en: DF.Data | None
+		lastname_th: DF.Data
 		student_id: DF.Data
 	# end: auto-generated types
 

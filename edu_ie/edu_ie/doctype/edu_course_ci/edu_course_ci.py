@@ -20,12 +20,15 @@ class EDUCourseCI(Document):
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
+		from frappe.types import DF
+
 		from edu_ie.edu_ie.doctype.edu_course_ci_clo.edu_course_ci_clo import EDUCourseCICLO
-		from edu_ie.edu_ie.doctype.edu_course_ci_clo_pi_map.edu_course_ci_clo_pi_map import EDUCourseCICLOPIMap
+		from edu_ie.edu_ie.doctype.edu_course_ci_clo_pi_map.edu_course_ci_clo_pi_map import (
+			EDUCourseCICLOPIMap,
+		)
 		from edu_ie.edu_ie.doctype.edu_course_ci_eval.edu_course_ci_eval import EDUCourseCIEval
 		from edu_ie.edu_ie.doctype.edu_course_ci_rubric.edu_course_ci_rubric import EDUCourseCIRubric
 		from edu_ie.edu_ie.doctype.edu_section_link.edu_section_link import EDUSectionLink
-		from frappe.types import DF
 
 		abet1_file: DF.Attach | None
 		abet2_file: DF.Attach | None
@@ -52,23 +55,21 @@ class EDUCourseCI(Document):
 	# end: auto-generated types
 
 	def autoname(self):
-		# Check existing documents with the same course and evaluation year
-		existing_docs = frappe.db.get_all(
+		# Check if a document with the same course, evaluation year, and curriculum already exists
+		num_existing = frappe.db.count(
 			"EDU Course CI",
-			filters={
+			{
 				"course": self.course,
 				"evaluation_year": self.evaluation_year,
 				"curriculum": self.curriculum,
+				"docstatus": ["in", [0, 1]],  # Count only Draft and Submitted documents
 			},
-			fields=["name"],
 		)
-		num_existing = len(existing_docs)
-
-		if self.course and self.evaluation_year:
-			self.name = f"{self.course}-{self.curriculum}-{self.evaluation_year}-V{num_existing + 1}"
-
-		else:
-			frappe.throw("Course and Evaluation Year must be set to generate the document name.")
+		if num_existing > 0:
+			frappe.throw(
+				f"An EDU Course CI document already exists for course '{self.course}', evaluation year '{self.evaluation_year}', and curriculum '{self.curriculum}'. Please check the existing documents."
+			)
+		self.name = f"{self.course}-{self.curriculum}-{self.evaluation_year}"
 
 	# Calculate the average score based on the cso_evaluation_table
 	def calculate_average_score(self):
@@ -162,50 +163,70 @@ class EDUCourseCI(Document):
 				)
 
 	def check_cso_mapping(self):
-		table_cso_numbers = [item.get("cso_number", -1) for item in self.cso_table]  # [1,2]
-		mapping_cso_numbers = [item.get("cso_number", -1) for item in self.cso_so_mapping]  # [1,2]
-		mapping_sos = [item.get("so", -1) for item in self.cso_so_mapping]  # ['SO-1', 'SO-2']
+		table_clo_numbers = [item.get("clo_number", -1) for item in self.clo_table]  # [1,2]
+		mapping_clo_numbers = [item.get("clo_number", -1) for item in self.clo_pi_mapping]  # [1,2]
+		mapping_pis = [item.get("pi", -1) for item in self.clo_pi_mapping]  # ['PI-1', 'PI-2']
 
-		# Check for uniqueness of CSO numbers in the cso table.
-		if len(table_cso_numbers) != len(set(table_cso_numbers)):
+		# Check for uniqueness of CLO numbers in the CLO table.
+		if len(table_clo_numbers) != len(set(table_clo_numbers)):
 			frappe.throw(
-				'Duplicate CSO numbers found in "CSO Entries" table. Each CSO should have a unique number.'
+				'Duplicate CLO numbers found in "CLO Entries" table. Each CLO should have a unique number.'
 			)
 
-		# Check for unmatched CSO numbers between the mapping and the table.
-		for map_cso in mapping_cso_numbers:
-			if map_cso not in table_cso_numbers:
+		# Check for unmatched CLO numbers between the mapping and the table.
+		for map_clo in mapping_clo_numbers:
+			if map_clo not in table_clo_numbers:
 				frappe.throw(
-					f'CSO-{map_cso} in "CSO-SO Mapping" table was not found in "CSO Entries" table. Please check the mapping and entries tables.'
+					f'CLO-{map_clo} in "CLO-PI Mapping" table was not found in "CLO Entries" table. Please check the mapping and entries tables.'
 				)
 
-		# Check for unmatched CSO numbers between the table and the mapping.
-		for cso in table_cso_numbers:
-			if cso not in mapping_cso_numbers:
+		# Check for unmatched CLO numbers between the table and the mapping.
+		for clo in table_clo_numbers:
+			if clo not in mapping_clo_numbers:
 				frappe.throw(
-					f'There is no SO mapping found for CSO-{cso} in "CSO Entries" table. Please check the mapping and entries tables.'
+					f'There is no PI mapping found for CLO-{clo} in "CLO Entries" table. Please check the mapping and entries tables.'
 				)
 
 		msg = ""
-		if len(mapping_cso_numbers) != len(set(mapping_cso_numbers)):
+		if len(mapping_clo_numbers) != len(set(mapping_clo_numbers)):
 			msg = (
 				msg
-				+ '• Duplicate CSO numbers found in "CSO-SO Mapping" table. Each CSO should be mapped only once. Please check with the instructor(s).'
+				+ '• Duplicate CLO numbers found in "CLO-PI Mapping" table. Each CLO should be mapped only once. Please check with the instructor(s).'
 			)
 
-		if len(mapping_sos) != len(set(mapping_sos)):
+		if len(mapping_pis) != len(set(mapping_pis)):
 			msg = (
 				msg
-				+ '• Duplicate SO entries found in "CSO-SO Mapping" table. Each SO should be mapped to only one CSO. Please check with the instructor(s).'
+				+ '• Duplicate PI entries found in "CLO-PI Mapping" table. Each PI should be mapped to only one CLO. Please check with the instructor(s).'
 			)
 
 		if msg != "":
 			frappe.msgprint(msg)
 
+	def check_rubric(self):
+		rubric_table = self.rubric_table
+
+		if rubric_table:
+			# Check for duplicates
+			rubric_nos = [item.get("clo_number", -1) for item in rubric_table]  # [1,2]
+			if len(rubric_nos) != len(set(rubric_nos)):
+				frappe.throw(
+					"Duplicate CLO numbers found in the rubric table. Each rubric entry should have a unique CLO number."
+				)
+
+			# Check if there is CLO number assigned for each rubric entry
+			clo_numbers = [item.get("clo_number", -1) for item in self.clo_table]  # [1,2]
+			for rubric in rubric_table:
+				if rubric.clo_number not in clo_numbers:
+					frappe.throw(
+						f"Rubric number {rubric.clo_number} does not match any CLO number in the CLO table. Please ensure that each rubric entry corresponds to a valid CLO."
+					)
+
 	def before_save(self):
 		self.calculate_average_score()
 		self.change_filenames()
 		self.check_cso_mapping()
+		self.check_rubric()
 
 
 def is_already_renamed(filepath):

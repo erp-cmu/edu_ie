@@ -14,13 +14,13 @@ class EDUCourseCICLOPIMap(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		cso_number: DF.Int
+		clo_number: DF.Int
 		description_en: DF.SmallText | None
 		description_th: DF.SmallText | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data
-		so: DF.Link
+		pi: DF.Link
 	# end: auto-generated types
 
 	pass

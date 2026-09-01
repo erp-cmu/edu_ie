@@ -18,6 +18,7 @@
    "fieldname": "po",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "PO",
    "options": "EDU PO",
    "reqd": 1
@@ -25,6 +26,8 @@
   {
    "fieldname": "tk",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "TK",
    "options": "EDU TK"
   },
@@ -59,7 +62,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-30 10:43:18.871955",
+ "modified": "2026-09-01 14:33:26.498040",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU PI",

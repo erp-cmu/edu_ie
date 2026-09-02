@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-09-02 17:54:50.862084",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "scoring_name",
+  "scaling_method",
+  "score_max",
+  "score_min",
+  "column_break_exmz",
+  "threshold_4",
+  "threshold_3",
+  "threshold_2",
+  "threshold_1"
+ ],
+ "fields": [
+  {
+   "fieldname": "scoring_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Scoring Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "threshold_4",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Threshold for 4"
+  },
+  {
+   "fieldname": "threshold_3",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Threshold for 3"
+  },
+  {
+   "fieldname": "threshold_2",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Threshold for 2"
+  },
+  {
+   "fieldname": "score_max",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Max Score",
+   "reqd": 1
+  },
+  {
+   "fieldname": "score_min",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Min Score",
+   "reqd": 1
+  },
+  {
+   "fieldname": "threshold_1",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Threshold for 1",
+   "mandatory_depends_on": "eval:doc.scoring_method == 'Threshold'"
+  },
+  {
+   "fieldname": "scaling_method",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Scaling Method",
+   "options": "Threshold\nLinear"
+  },
+  {
+   "fieldname": "column_break_exmz",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-02 18:53:39.260089",
+ "modified_by": "Administrator",
+ "module": "EDU IE",
+ "name": "EDU Score Scaling",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

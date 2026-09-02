@@ -15,12 +15,12 @@
   {
    "fieldname": "description_en",
    "fieldtype": "Small Text",
-   "in_list_view": 1,
    "label": "Description (EN)"
   },
   {
    "fieldname": "description_th",
    "fieldtype": "Small Text",
+   "in_list_view": 1,
    "label": "Description (TH)"
   },
   {
@@ -33,6 +33,7 @@
   {
    "fieldname": "curriculum",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Curriculum",
    "options": "EDU Curriculum",
    "reqd": 1
@@ -41,7 +42,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-30 09:26:39.192909",
+ "modified": "2026-09-02 12:31:20.096413",
  "modified_by": "Administrator",
  "module": "EDU IE",
  "name": "EDU PO",
